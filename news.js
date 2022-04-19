@@ -24,12 +24,12 @@ const news = [
 	}
 ]
 
-class News extends React.Component {
-    render() {
-        return ( 
-        <h1>hi</h1>
-        )
-    }
-}
-
-ReactDOM.createRoot(<News />, document.getElementById('app'))
+function Welcome(props) {
+    return <div>
+	<h1>{props.name}</h1>
+	</div>
+  }
+  
+  const element = <Welcome name={news[0].title} />;
+  const root = ReactDOM.createRoot(document.getElementById('left-card'));
+  root.render(element);
