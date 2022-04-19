@@ -30,10 +30,10 @@ function Admissions(prop) {
 		<img src={news[0].image} className="card-img-top" alt="img" />
 	<h1>{news[0].title}</h1>
 	<p className="card-text">{news[0].date}</p>
-	<a href='#' className="btn btn-info">READ MORE</a>
+	<a href='https://example.com/' className="btn btn-info">READ MORE</a>
 	</div>
 	</div>
   }
-  const admissions = <Admissions/>;
+
   const root = ReactDOM.createRoot(document.getElementById('first-card'));
-  root.render(admissions);
+  root.render(<Admissions/>);
