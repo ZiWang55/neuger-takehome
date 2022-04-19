@@ -1,0 +1,35 @@
+
+
+const news = [
+	{
+		"title": "Now Enrolling Students 6-12 for Fall 2020",
+		"date": "2019-09-19",
+		"link": "https://example.com/",
+		"image": "news-1.png",
+		"category": "Admissions"
+	},
+	{
+		"title": "Mary's School Site Plan for Valley Campus",
+		"date": "2019-09-13",
+		"link": "https://google.com/",
+		"image": "news-2.png",
+		"category": "Campus"
+	},
+	{
+		"title": "Center of Excellence in Hockey Includes Upgrades for the Iceoplex",
+		"date": "2019-09-01",
+		"link": "https://apple.com/",
+		"image": "news-3.png",
+		"category": "Campus"
+	}
+]
+
+class News extends React.Component {
+    render() {
+        return ( 
+        <h1>hi</h1>
+        )
+    }
+}
+
+ReactDOM.createRoot(<News />, document.getElementById('app'))
