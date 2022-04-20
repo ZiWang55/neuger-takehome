@@ -4,4 +4,8 @@ $theme-colors: (
   "danger": #750f19
 );
 
-@import "node_modules/bootstrap/scss/bootstrap.scss"
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/dropdown";
+@import "node_modules/bootstrap/scss/buttons";
+@import "node_modules/bootstrap/scss/card";
