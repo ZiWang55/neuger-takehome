@@ -25,40 +25,52 @@ const news = [
 ]
 // First Card Comp
 function FirstCard(prop) {
-    return <div>
-	<div className="col">
-		   <div className="card" style={{width: "25rem"}}>
-		<img src={news[0].image} className="card-img-top" alt="img" />
-	<h1>{news[0].title}</h1>
-	<p className="card-text">{news[0].date}</p>
-	<a href={news[0].link} className="btn btn-info">READ MORE</a>
-	</div>
-	</div></div>
-  }
+	return <div>
+		<div className="col">
+			<div className="card" style={{ width: "25rem" }}>
+				<img src={news[0].image} className="card-img-top" alt="img" />
+				<h1>{news[0].title}</h1>
+				<p className="card-text">{news[0].date}</p>
+				<a href={news[0].link} className="btn btn-info">READ MORE</a>
+			</div>
+		</div></div>
+}
 //   Testing rendering to html
-  const root = ReactDOM.createRoot(document.getElementById('app'));
-  root.render(<FirstCard/>);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<FirstCard />);
 
 //   Second Card Comp
-console.log(<FirstCard/>)
-
 function SecondCard(prop) {
-return <div>
-<div className="card" style={{width: "25rem"}}>
-<img src={news[1].image} className="card-img-top" alt="img" />
-<h1>{news[1].title}</h1>
-<p className="card-text">{news[1].date}</p>
-<a href={news[1].link} className="btn btn-info">READ MORE</a>
-</div>
-</div>}
+	return <div>
+		<div className="col">
+			<div className="card" style={{ width: "25rem" }}>
+				<img src={news[1].image} className="card-img-top" alt="img" />
+				<h1>{news[1].title}</h1>
+				<p className="card-text">{news[1].date}</p>
+				<a href={news[1].link} className="btn btn-info">READ MORE</a>
+			</div>
+		</div></div>
+}
 
 // Third Card Comp
 function ThirdCard(prop) {
-return <div>
-<div className="card" style={{width: "25rem"}}>
-<img src={news[0].image} className="card-img-top" alt="img" />
-<h1>{news[0].title}</h1>
-<p className="card-text">{news[0].date}</p>
-<a href={news[0].link} className="btn btn-info">READ MORE</a>
-</div>
-</div>}
+	return <div>	<div className="col">
+		<div className="card" style={{ width: "25rem" }}>
+			<img src={news[2].image} className="card-img-top" alt="img" />
+			<h1>{news[2].title}</h1>
+			<p className="card-text">{news[2].date}</p>
+			<a href={news[2].link} className="btn btn-info">READ MORE</a>
+		</div>
+	</div></div>
+}
+
+const Search = () => {
+	const [showResults, setShowResults] = React.useState(false)
+	const onClick = () => setShowResults(true)
+	return (
+	  <div>
+		<input type="submit" value="Search" onClick={onClick} />
+		{ showResults ? <Results /> : null }
+	  </div>
+	)
+  }
