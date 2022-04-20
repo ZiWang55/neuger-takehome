@@ -6,100 +6,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mary's School</title>
     <!-- css -->
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="style.css" />
     <!-- google fonts (Roboto Light 300 Italic) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
-      <!-- top card container -->
+  <body class="flex flex-column min-vh-100">
+    <!-- top card container -->
     <div class="container">
-        <div class="row">
-            <!-- left card -->
-          <div class="col">
-            <div class="card" style="width: 25rem;">
-                <img src="images/admissions.jpg" class="card-img-top" alt="Admissions">
-                <div class="card-body">
-                  <h5 class="card-title">Admissions</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  <a href="#" class="btn btn-danger">MORE INFO</a>
-                </div>
-              </div>
+      <div class="row">
+        <!-- left card -->
+        <div class="col">
+          <div class="card" style="width: 25rem">
+            <img
+              src="images/admissions.jpg"
+              class="card-img-top"
+              alt="Admissions"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Admissions</h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+              <a href="#" class="btn btn-danger">MORE INFO</a>
+            </div>
           </div>
-          <!-- right card -->
-          <div class="col">
-            <div class="card" style="width: 25rem;">
-                <img src="images/employment.jpg" class="card-img-top" alt="Employment">
-                <div class="card-body">
-                  <h5 class="card-title">Employment</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  <a href="#" class="btn btn-danger">Go somewhere</a>
-                </div>
-              </div>
+        </div>
+        <!-- right card -->
+        <div class="col">
+          <div class="card" style="width: 25rem">
+            <img
+              src="images/employment.jpg"
+              class="card-img-top"
+              alt="Employment"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Employment</h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+              <a href="#" class="btn btn-danger">Go somewhere</a>
+            </div>
           </div>
         </div>
       </div>
-      <!-- bottom card container -->
-      <div class="container">
-          <!-- section title -->
-         <h1>NEWS</h1>
-          <!-- drop down menu button -->
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown button
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </div>
-            <!-- left card -->
-            <div class="row">
-          <div class="col">
-         
-          <div id="first-card"></div>
-              </div>
-          
-          <!-- middle card -->
-          <div class="col">
-            <div class="card" style="width: 25rem;">
-                <img src="images/news-2.jpg" class="card-img-top" alt="Employment">
-                <div class="card-body">
-                  <h5 class="card-title">Employment</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  <a href="#" class="btn btn-info">READ MORE</a>
-                </div>
-              </div>
-          </div>
-          <!-- right card -->
-          <div class="col">
-            <div class="card" style="width: 25rem;">
-            
-                <img src="images/news-3.jpg" class="card-img-top" alt="Employment">
-                <div class="card-body">
-                  <h5 class="card-title">Employment</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  <a href="#" class="btn btn-info">READ MORE</a>
-                </div>
-              </div>
-          </div>
-        </div>
     </div>
+    <!-- bottom card container -->
+    <div class="container">
+      <!-- section title -->
+      <h1>NEWS</h1>
+      <!-- drop down menu button -->
+      <div class="dropdown">
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton1"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Dropdown button
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
       </div>
-      <!-- footer -->
-  <nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-      <span class="navbar-brand mb-0 h1 ">Mary's School</span>
-      <span class="navbar-brand mb-0 h1 ">805.555.5555</span>
+      <!-- news containers -->
+      <div class="row">
+        <div id="app"></div>
+      </div>
     </div>
-  </nav>
+    <!-- footer -->
+    <nav class="navbar navbar-light bg-light mt-auto">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">Mary's School</span>
+        <span class="navbar-brand mb-0 h1">805.555.5555</span>
+      </div>
+    </nav>
     <!-- load react. -->
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-  <!-- babel -->
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <script type="text/babel" src="news.js"></script>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <!-- babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel" src="news.js"></script>
   </body>
 </html>
