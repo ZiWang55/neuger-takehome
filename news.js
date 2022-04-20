@@ -12,14 +12,14 @@ const news = [
 		"title": "Mary's School Site Plan for Valley Campus",
 		"date": "2019-09-13",
 		"link": "https://google.com/",
-		"image": "images/news-2.png",
+		"image": "images/news-2.jpg",
 		"category": "Campus"
 	},
 	{
 		"title": "Center of Excellence in Hockey Includes Upgrades for the Iceoplex",
 		"date": "2019-09-01",
 		"link": "https://apple.com/",
-		"image": "news-3.png",
+		"image": "images/news-3.jpg",
 		"category": "Campus"
 	}
 ]
@@ -36,8 +36,8 @@ function FirstCard(prop) {
 		</div></div>
 }
 //   Testing rendering to html
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<FirstCard />);
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(<FirstCard />);
 
 //   Second Card Comp
 function SecondCard(prop) {
@@ -64,13 +64,44 @@ function ThirdCard(prop) {
 	</div></div>
 }
 
-const Search = () => {
+const Allnews = () => (
+	<div>
+		<FirstCard />
+		<SecondCard />
+		<ThirdCard />
+</div>
+)
+
+const Admissions = () => (
+	<div>
+		<FirstCard/>
+	</div>
+)
+
+const All = () => {
 	const [showResults, setShowResults] = React.useState(false)
 	const onClick = () => setShowResults(true)
 	return (
 	  <div>
-		<input type="submit" value="Search" onClick={onClick} />
-		{ showResults ? <Results /> : null }
+		<input type="submit" value="All News" onClick={onClick} />
+		{ showResults ? <Allnews /> : null }
 	  </div>
 	)
-  }
+}
+
+
+
+ReactDOM.render(<All />, document.getElementById('all-news'))
+
+const Admis = () => {
+	const [showResults, setShowResults] = React.useState(false)
+	const onClick = () => setShowResults(true)
+	return (
+	  <div>
+		<input type="submit" value="Admissions" onClick={onClick} />
+		{ showResults ? <Admissions /> : null }
+	  </div>
+	)
+}
+	
+ReactDOM.render(<Admis />, document.getElementById('admission-button'))
