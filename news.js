@@ -24,14 +24,14 @@ const news = [
 	}
 ]
 // First Card Comp
-function FirstCard(prop) {
+const FirstCard =(props) => {
 	return <div>
-		<div className="col">
+		<div>
 			<div className="card" style={{ width: "25rem" }}>
-				<img src={news[0].image} className="card-img-top" alt="img" />
-				<h1>{news[0].title}</h1>
-				<p className="card-text">{news[0].date}</p>
-				<a href={news[0].link} className="btn btn-info">READ MORE</a>
+				<img src={news[props.data].image} className="card-img-top" alt="img" />
+				<h1>{news[props.data].title}</h1>
+				<p className="card-text">{news[props.data].date}</p>
+				<a href={news[props.data].link} className="btn btn-info">READ MORE</a>
 			</div>
 		</div></div>
 }
@@ -39,69 +39,57 @@ function FirstCard(prop) {
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(<FirstCard />);
 
-//   Second Card Comp
-function SecondCard(prop) {
-	return <div>
-		<div className="col">
-			<div className="card" style={{ width: "25rem" }}>
-				<img src={news[1].image} className="card-img-top" alt="img" />
-				<h1>{news[1].title}</h1>
-				<p className="card-text">{news[1].date}</p>
-				<a href={news[1].link} className="btn btn-info">READ MORE</a>
-			</div>
-		</div></div>
-}
 
-// Third Card Comp
-function ThirdCard(prop) {
-	return <div>	<div className="col">
-		<div className="card" style={{ width: "25rem" }}>
-			<img src={news[2].image} className="card-img-top" alt="img" />
-			<h1>{news[2].title}</h1>
-			<p className="card-text">{news[2].date}</p>
-			<a href={news[2].link} className="btn btn-info">READ MORE</a>
-		</div>
-	</div></div>
-}
+const Allnews=()=> {
 
-const Allnews = () => (
-	<div>
-		<FirstCard />
-		<SecondCard />
-		<ThirdCard />
-</div>
-)
-
-const Admissions = () => (
-	<div>
-		<FirstCard/>
-	</div>
-)
-
-const All = () => {
-	const [showResults, setShowResults] = React.useState(false)
-	const onClick = () => setShowResults(true)
-	return (
-	  <div>
-		<input type="submit" value="All News" onClick={onClick} />
-		{ showResults ? <Allnews /> : null }
-	  </div>
-	)
-}
-
-
-
-ReactDOM.render(<All />, document.getElementById('all-news'))
-
-const Admis = () => {
-	const [showResults, setShowResults] = React.useState(false)
-	const onClick = () => setShowResults(true)
-	return (
-	  <div>
-		<input type="submit" value="Admissions" onClick={onClick} />
-		{ showResults ? <Admissions /> : null }
-	  </div>
-	)
-}
+		return (
+			<div className="row">
+		<div  className="col">	<FirstCard data='0' /></div>
+		<div  className="col">		<FirstCard data='1' /></div>
+		<div  className="col">		<FirstCard data='2' /></div>
+ 	</div>
+		)
 	
-ReactDOM.render(<Admis />, document.getElementById('admission-button'))
+}
+const Admissions=()=> {
+
+	return (
+		<div className="row">
+	<div  className="col">	<FirstCard data='0' /></div>
+
+ </div>
+	)
+
+}
+const Campus=()=> {
+
+	return (
+		<div className="row">
+	<div  className="col">		<FirstCard data='1' /></div>
+		<div  className="col">		<FirstCard data='2' /></div>
+
+ </div>
+	)
+
+}
+
+
+const App = () => {
+	const [showResults, setShowResults] = React.useState('AllNews')
+	return (
+		<div>
+			<nav>
+				<button onClick={()=> setShowResults('AllNews')}>All News</button>
+				<button onClick={() => setShowResults('Admissions')}>Admissions</button>
+				<button onClick={()=> setShowResults('Campus')}>Campus</button>
+			</nav>
+			<div>
+				{showResults=== 'AllNews' && <Allnews/>}
+				{showResults === 'Admissions' && <Admissions />}
+				{showResults=== 'Campus' && <Campus/>}
+			</div>
+		</div>
+	)
+}
+
+ReactDOM.render(<App />, document.getElementById('button'))
