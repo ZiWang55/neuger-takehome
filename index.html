@@ -10,17 +10,13 @@
     <!-- google fonts (Roboto Light 300 Italic) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
-      rel="stylesheet"
-    />
   </head>
-  <body class="flex flex-column min-vh-100">
+  <body class="flex flex-column vh-100">
     <!-- top card container -->
-    <div class="container">
+    <div class="container bg-primary mw-100 p-5 d-flex justify-content-around">
       <div class="row">
         <!-- left card -->
-        <div class="col">
+        <div class="col p-3">
           <div class="card" style="width: 25rem">
             <img
               src="images/admissions.jpg"
@@ -38,7 +34,7 @@
           </div>
         </div>
         <!-- right card -->
-        <div class="col">
+        <div class="col p-3">
           <div class="card" style="width: 25rem">
             <img
               src="images/employment.jpg"
@@ -57,44 +53,33 @@
         </div>
       </div>
     </div>
-    <!-- bottom card container -->
-    <div class="container">
-      <!-- section title -->
-      <h1>NEWS</h1>
-      <!-- drop down menu button -->
-    
-      <div class="dropdown">
-        <button
-          class="btn btn-secondary dropdown-toggle"
-          type="button"
-          id="dropdownMenuButton1"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          Dropdown button
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-      </div>
-      <!-- news containers -->  
-      <div id="button"></div>
-      <div>
+    <!--react component container -->
+    <div class="container bg-white mw-100 d-flex flex-column pb-4">
       <div id="root"></div>
-        <div id="root2"></div>
-      </div>
     </div>
     <!-- footer -->
-    <nav class="navbar navbar-light bg-light mt-auto">
-      <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">Mary's School</span>
-        <span class="navbar-brand mb-0 h1">805.555.5555</span>
+    <nav
+      class="footer pb-4 pt-1 bg-danger d-flex flex-row justify-content-between"
+    >
+      <div class="container d-flex flex-column">
+        <div class="navbar-brand text-white">Mary's School</div>
+        <div class="navbar-brand text-white">805.555.5555</div>
+      </div>
+      <div class="container d-flex flex-row justify-content-end h-25">
+        <a class="p-2" href="">
+          <img src="images/instagram.svg" alt="instagram"
+        /></a>
+        <a class="p-2" href="">
+          <img src="images/facebook.svg" alt="facebook"
+        /></a>
       </div>
     </nav>
     <!-- bootstrap js -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
     <!-- load react. -->
     <script
       src="https://unpkg.com/react@18/umd/react.development.js"
@@ -107,5 +92,7 @@
     <!-- babel -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel" src="news.js"></script>
+    <!-- dropdown button display script (it's not working with react bootstrap dropdown) -->
+    <!-- <script src="dropdown.js"></script> -->
   </body>
 </html>

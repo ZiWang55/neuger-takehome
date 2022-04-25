@@ -1,5 +1,4 @@
-
-// json file
+// Json news file
 const news = [
 	{
 		"title": "Now Enrolling Students 6-12 for Fall 2020",
@@ -23,73 +22,81 @@ const news = [
 		"category": "Campus"
 	}
 ]
-// First Card Comp
-const FirstCard =(props) => {
+// Card element
+const Card = (props) => {
 	return <div>
-		<div>
-			<div className="card" style={{ width: "25rem" }}>
-				<img src={news[props.data].image} className="card-img-top" alt="img" />
-				<h1>{news[props.data].title}</h1>
-				<p className="card-text">{news[props.data].date}</p>
-				<a href={news[props.data].link} className="btn btn-info">READ MORE</a>
-			</div>
-		</div></div>
+		<div className="card d-flex justify-content-center " style={{ width: "18rem" }}>
+			<img src={news[props.data].image} className="card-img-top" alt="img" />
+			<div className="p-3">
+				<h6 className="">{news[props.data].title}</h6>
+				<p className="" >{news[props.data].date}</p>
+				<a href={news[props.data].link} className="btn btn-info">READ MORE</a></div>
+		</div>
+	</div>
 }
-//   Testing rendering to html
+
+// Testing rendering to html
 // const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(<FirstCard />);
+// root.render(<Card />);
 
-
-const Allnews=()=> {
-
-		return (
-			<div className="row">
-		<div  className="col">	<FirstCard data='0' /></div>
-		<div  className="col">		<FirstCard data='1' /></div>
-		<div  className="col">		<FirstCard data='2' /></div>
- 	</div>
-		)
-	
-}
-const Admissions=()=> {
-
+// News category element
+const Allnews = () => {
 	return (
-		<div className="row">
-	<div  className="col">	<FirstCard data='0' /></div>
-
- </div>
+		<div className="row d-flex justify-content-center">
+			<div className="col d-flex justify-content-center p-1"> <Card data='0' /></div>
+			<div className="col d-flex justify-content-center p-1">	<Card data='1' /></div>
+			<div className="col d-flex justify-content-center p-1">	<Card data='2' /></div>
+		</div>
 	)
-
 }
-const Campus=()=> {
-
+const Admissions = () => {
 	return (
-		<div className="row">
-	<div  className="col">		<FirstCard data='1' /></div>
-		<div  className="col">		<FirstCard data='2' /></div>
-
- </div>
+		<div className="row d-flex justify-content-center">
+			<div className="col d-flex justify-content-center p-1">	<Card data='0' /></div>
+		</div>
 	)
-
 }
-
-
+const Campus = () => {
+	return (
+		<div className="row d-flex justify-content-center">
+			<div className="col d-flex justify-content-center p-1">	<Card data='1' /></div>
+			<div className="col d-flex justify-content-center p-1"> <Card data='2' /></div>
+		</div>
+	)
+}
+// Bottons returning results using state
 const App = () => {
 	const [showResults, setShowResults] = React.useState('AllNews')
 	return (
 		<div>
 			<nav>
-				<button onClick={()=> setShowResults('AllNews')}>All News</button>
-				<button onClick={() => setShowResults('Admissions')}>Admissions</button>
-				<button onClick={()=> setShowResults('Campus')}>Campus</button>
+				<h3 className='p-1 pt-3'>NEWS</h3>
+				<div className='dropdown d-flex flex-row'>
+					<button
+						className="btn btn-default dropdown-toggle p-1 pb-3"
+						type="button"
+						id="dropdownMenuButton1"
+						data-bs-toggle="dropdown"
+						aria-haspopup='true'
+						aria-expanded="true"
+					>
+					News Selection
+					</button>
+						<ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+						<li><a className="dropdown-item" onClick={() => setShowResults('AllNews') }>All News</a></li>
+						<li><a className="dropdown-item" onClick={() => setShowResults('Admissions')}>Admissions</a></li>
+						<li><a className="dropdown-item" onClick={() => setShowResults('Campus')}>Campus</a></li>
+					</ul>
+				</div>
 			</nav>
-			<div>
-				{showResults=== 'AllNews' && <Allnews/>}
+			<div className='d-flex flex-column'>
+				{showResults === 'AllNews' && <Allnews />}
 				{showResults === 'Admissions' && <Admissions />}
-				{showResults=== 'Campus' && <Campus/>}
+				{showResults === 'Campus' && <Campus />}
 			</div>
 		</div>
 	)
 }
 
-ReactDOM.render(<App />, document.getElementById('button'))
+// Render to the HTML
+ReactDOM.render(<App />, document.getElementById('root'))

@@ -1,11 +1,34 @@
+// Google Fonts
 
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');;
+
+
+// Font Variables
+   $font-stack: 'Roboto', sans-serif;
+// Color Changes
 $theme-colors: (
-  "info": #000,
-  "danger": #750f19
+  "info": #0f5a5e,
+  "danger": #750f19,
+  "primary": #c4c4c4,
 );
 
-@import "node_modules/bootstrap/scss/bootstrap.scss";
-@import "node_modules/bootstrap/scss/functions";
-@import "node_modules/bootstrap/scss/dropdown";
-@import "node_modules/bootstrap/scss/buttons";
-@import "node_modules/bootstrap/scss/card";
+$custom-variable: 0.5rem;//this was made to change footer fontsize
+
+.dropdown-menu li:hover {
+  cursor: pointer;
+}
+
+.card {
+  font-family: $font-stack;
+}
+
+.footer {
+  font-family: $font-stack;
+   .nav-brand {
+     font-size: $custom-variable; //my attempt to change fontsize with my own variable
+   }
+}
+
+// Bootstrap
+@import "node_modules/bootstrap/scss/bootstrap.scss"; 

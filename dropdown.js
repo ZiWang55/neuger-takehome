@@ -1,0 +1,8 @@
+// $(function(){
+
+//     $(".dropdown-toggle").dropdown('click', 'li a', function(){
+//       $(".btn:first-child").text($(this).text());
+//       $(".btn:first-child").val($(this).text());
+//    });
+
+// });
